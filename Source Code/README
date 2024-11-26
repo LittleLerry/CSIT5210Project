@@ -1,0 +1,21 @@
+The operating system we tested the program is MacOS.
+This repository contains the Geolife Trajectory 1.3 database along with a python implementation of TIDKC. 
+The main database file contains a large number of trajectories (181 individuals, totaling approximately 
+130 MB). To simplify the analysis, we have extracted the trajectory data for the first four individuals, 
+numbered from 000 to 003. You can find these extracted data files in the Data folder.
+
+The TIDKC algorithm is divided into two parts. 
+
+The first part uses KME to map the trajectory to the first layer RKHS. After running the command:
+python3 rkhs_1.py
+the program will prompt you to specify an input (from 2 to 4), which indicates the range for reading data. 
+For example, entering `3` will read all data from "000" to "002". After the KME process, the results will 
+be output to the `IDK1.txt` file. Please note that `rkhs_1.py` must be in the same directory as 
+the `Data` folder. 
+
+The second part involves using the TIDKC algorithm for clustering. To obtain the results, run the 
+following command:
+python3 rkhs_2.py
+The program will output specific clustering information and the accuracy. You can check the example 
+image to verify that the program is working correctly. Please note that `rkhs_2.py` must be in 
+the same directory as the `Data` folder. 
